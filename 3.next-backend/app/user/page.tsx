@@ -1,24 +1,25 @@
 import axios from "axios";
 
 async function getUserDetails() {
-  const response = await axios.get("https://week-13-offline.kirattechnologies.workers.dev/api/v1/user/details")
-	return response.data;
+    const response = await axios.get("http://192.168.1.40:3000/api/v1/user/details")
+    return response.data;
 }
 
 export default async function Home() {
-  const userData = await getUserDetails();
+    const userData = await getUserDetails();
+    await new Promise(r => setTimeout(r, 100))
 
-  return (
-    <div className="flex flex-col justify-center h-screen">
-        <div className="flex justify-center">
-            <div className="border p-8 rounded">
-                <div>
-                    Name: {userData?.name}
+    return (
+        <div className="flex flex-col justify-center h-screen">
+            <div className="flex justify-center">
+                <div className="border p-8 rounded">
+                    <div>
+                        Name: {userData?.name}
+                    </div>
+
+                    {userData?.email}
                 </div>
-                
-                {userData?.email}
             </div>
         </div>
-    </div>
-  );
+    );
 }
