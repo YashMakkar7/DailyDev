@@ -1,11 +1,13 @@
 "use client"
 import axios from "axios";
-import { ChangeEventHandler, useRef, useState } from "react"
+import { useRouter } from "next/navigation";
+import { ChangeEventHandler, useRef } from "react"
 
 export default function Signup() {
     // other way is using refs
     const username = useRef("");
     const password = useRef("");
+    const router = useRouter();
     return <div className="w-screen h-screen flex items-center justify-center">
         <div className="border-2 p-2 rounded-lg">
             <div className="flex text-gray-50 text-xl font-semibold items-center justify-center ">Signup</div>
@@ -21,6 +23,7 @@ export default function Signup() {
                         username: username.current,
                         password: password.current
                     })
+                    router.push("/signin")
                 }}>Signup</button>
             </div>
         </div>
