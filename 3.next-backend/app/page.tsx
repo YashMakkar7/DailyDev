@@ -1,18 +1,28 @@
-import Link from "next/link";
+import Link from "next/link"
 
-export default function Loading() {
-  return (
-    <div className="flex  justify-center items-center text-lg w-screen h-screen ">
-      Todo Application
-      <div className="gap-1">
-        <Link href={"/signup"} className="text-md border m-1">
-          SignUp
+export default function Home() {
+  return <div className="flex w-screen h-screen justify-center items-center">
+    <div className="p-4 border rounded">
+      <div className="text-2xl">
+        Todo Application
+      </div>
+      <div className="flex justify-between text-xl font-bold mt-2">
+        <Link href="/signup">
+          <Button>Signup</Button>
         </Link>
-        <Link href={"/signin"} className="text-md border m-1">
-          Signin
+        <Link href="/signin">
+          <Button>Signin</Button>
         </Link>
       </div>
     </div>
-  )
+  </div>
+}
 
+interface Props {
+  children: React.ReactNode
+}
+function Button({ children }: Props) {
+  return <div className="p-2 border rounded">
+    {children}
+  </div>
 }
