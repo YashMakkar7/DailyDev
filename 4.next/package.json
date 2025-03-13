@@ -1,5 +1,5 @@
 {
-  "name": "simpledomain",
+  "name": "my-app",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,12 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@prisma/client": "^6.4.1",
-    "@types/mongoose": "^5.11.96",
-    "axios": "^1.8.1",
-    "mongoose": "^8.12.1",
-    "next": "15.2.0",
-    "prisma": "^6.4.1",
+    "axios": "^1.8.2",
+    "next": "15.2.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
@@ -25,7 +21,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "15.2.0",
+    "eslint-config-next": "15.2.1",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
